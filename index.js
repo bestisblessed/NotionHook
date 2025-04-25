@@ -132,22 +132,34 @@ async function createCommit(notion, commits) {
           ],
         },
       },
+      // children: [
+      //   {
+      //     object: "block",
+      //     type: "paragraph",
+      //     paragraph: {
+      //       text: [
+      //         {
+      //           type: "text",
+      //           text: {
+      //             content: description,
+      //           },
+      //         },
+      //       ],
+      //     },
+      //   },
+      //   filesBlock,
+      // ],
       children: [
         {
           object: "block",
           type: "paragraph",
           paragraph: {
             text: [
-              {
-                type: "text",
-                text: {
-                  content: description,
-                },
-              },
-            ],
-          },
-        },
-        filesBlock,
+              { type:"text", text:{ content: description } }
+            ]
+          }
+        }
+        // <-- no filesBlock here at all
       ],
     });
   });
